@@ -27,26 +27,24 @@ with SB(uc=True, test=True, locale="en", ad_block=True, chromium_arg="--no-sandb
 
     sb.sleep(3)
     sb.cdp.press_keys('input[name="email"]', f"ytproject")
-    sb.sleep(0.1)
+    sb.sleep(0.3)
     sb.cdp.press_keys('input[name="email"]', f"elevenlabs")
     sb.sleep(0.2)
     sb.cdp.press_keys('input[name="email"]', f"acckbkb{9990+w}@")
-    sb.sleep(0.1)
+    sb.sleep(0.3)
     sb.cdp.press_keys('input[name="email"]', f"catchmail.io")
     sb.sleep(0.2)
 
     
     sb.cdp.press_keys('input[name="password"]', "Prince!")
-    sb.sleep(0.1)
+    sb.sleep(0.2)
     sb.cdp.press_keys('input[name="password"]', "4438#")
 
     # Standard syntax for clicking a button containing specific text in CDP Mode
     sb.cdp.click('div[data-testid="signup-signup-button-div"] button:contains("Sign up")')
 
-    sb.sleep(0.06)
+    sb.sleep(0.02)
 
-    sb.solve_captcha()
-    sb.sleep(0.05)
     sb.solve_captcha()
 
     sb.sleep(2)
