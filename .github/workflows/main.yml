@@ -52,8 +52,10 @@ jobs:
     - name: Install x11
       run: sudo apt install x11-apps
 
-    - name: install apti
-      run: sudo aptitude update
+    - name: Install Aptitude
+      run: |
+        sudo apt update
+        sudo apt install -y aptitude
 
     - name: install xutil
       run: sudo aptitude install -y --force-yes xserver-xorg-core
