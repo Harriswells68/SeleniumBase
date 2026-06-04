@@ -51,18 +51,17 @@ jobs:
 
     - name: Install x11
       run: sudo apt install x11-apps
-
-    - name: Install Aptitude
-      run: |
-        sudo apt update
-        sudo apt install -y aptitude
-
+    
+    - name: Update apt cache
+      run: sudo apt-get update
+    
     - name: install xutil
-      run: sudo aptitude install -y --force-yes xserver-xorg-core
+      run: sudo apt-get install -y xserver-xorg-core
       
     - name: install apti
-      run: sudo aptitude install -y --force-yes x11-xkb-utils && sudo aptitude install -y --force-yes xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic
-
+      run: |
+        sudo apt-get install -y x11-xkb-utils
+        sudo apt-get install -y xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic
     - name: Run script
       run: export DISPLAY=34.226.221.115:0.0 && python new_recording_SB.py --headed
 
