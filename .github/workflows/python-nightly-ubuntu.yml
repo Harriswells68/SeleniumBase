@@ -1,5 +1,8 @@
 name: Nightly Tests (Ubuntu)
 
+permissions:
+  contents: write
+
 on:
   workflow_dispatch:
 
