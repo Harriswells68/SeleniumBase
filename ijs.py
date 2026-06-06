@@ -45,7 +45,7 @@ try:
     checkb = 'button[data-agent-id*="checkbox-_r_"][role="checkbox"][aria-checked="false"][data-state="unchecked"][value="on"]'
 
     if sb.is_element_visible(checkb):
-        sb.gui_click_element(checkb)
+        sb.click(checkb)
     else:
         print("checkbox button is not there!")
 
