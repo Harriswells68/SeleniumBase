@@ -57,7 +57,7 @@ jobs:
         nosetests nothing2.py
     - name: Run pytest examples/unit_tests/verify_framework.py --browser=chrome --headless
       run: |
-        python js.py --browser=chrome --headed  --maximize -v -s run
+        python ijs.py --browser=chrome --headed  --maximize -v -s run
     - name: Verify seleniumbase install from PyPI
       run: |
         pip install seleniumbase -U --no-deps --force-reinstall --no-cache-dir
