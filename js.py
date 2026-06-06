@@ -71,7 +71,7 @@ try:
     sb.sleep(1)
 
     # Standard syntax for clicking a button containing specific text in  Mode
-    sb.click('#sign-in-form > div.relative.flex.items-center.justify-between.w-full.h-fit.mt-4 > div.relative.w-full > button:contains("Sign in")')
+    sb.gui_click_element('#sign-in-form > div.relative.flex.items-center.justify-between.w-full.h-fit.mt-4 > div.relative.w-full > button:contains("Sign in")')
 
     sb.sleep(2)
 
