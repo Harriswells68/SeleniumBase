@@ -35,13 +35,28 @@ try:
 
     sb.sleep(4)
 
-    sb.gui_click_element('input[name="email"]', 20)
-
-    sb.gui_press_keys(f"ytprojectelevenlabsacckbkb{9990+w}@catchmail.io")  # human-speed
+    sb.gui_click_element('input[name="email"]')
     
+    # 2. Give the browser a brief moment to open the input and show the blinking cursor
+    sb.sleep(0.5)
+    
+    # 3. Now send the hardware keystrokes
+    sb.gui_press_keys(f"ytprojectelevenlabsacckbkb{9990+w}@catchmail.io")
+
+    # 1. Use a GUI click so the hardware mouse physically moves and clicks the element
     sb.gui_click_element('input[name="password"]')
     
-    sb.gui_press_keys("Prince!4438#")
+    # 2. Give the browser a brief moment to open the input and show the blinking cursor
+    sb.sleep(0.5)
+    
+    # 3. Now send the hardware keystrokes
+    sb.gui_press_keys(f"Prince!4438#")
+
+    sb.save_screenshot("newmethod.png", "screenshots")
+
+    sb.gui_press_keys("PAGE_DOWN")
+
+    sb.save_screenshot("newmethod2.png", "screenshots")
 
     checkb = 'button[data-agent-id*="checkbox-_r_"][role="checkbox"][aria-checked="false"][data-state="unchecked"][value="on"]'
 
