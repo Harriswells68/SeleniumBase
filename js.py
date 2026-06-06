@@ -34,7 +34,9 @@ w=random.randint(9999, 12000)
 print(w)
 
 try:
-    sb = sb_cdp.Chrome(url)
+    sb = sb_cdp.Chrome(url,
+    headed=True, 
+    chromium_arg="--no-sandbox")
 
     sb.sleep(4)
 
