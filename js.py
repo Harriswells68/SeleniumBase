@@ -35,11 +35,23 @@ try:
 
     sb.sleep(4)
 
-    sb.press_keys('input[name="email"]', f"ytprojectelevenlabsacckbkb{9990+w}@catchmail.io", 20)  # human-speed
-    sb.press_keys('input[name="password"]', "Prince!4438#")
+    sb.gui_click_element('input[name="email"]', 20)
+
+    sb.gui_press_keys(f"ytprojectelevenlabsacckbkb{9990+w}@catchmail.io")  # human-speed
+    
+    sb.gui_click_element('input[name="password"]')
+    
+    sb.gui_press_keys("Prince!4438#")
+
+    checkb = 'button[data-agent-id*="checkbox-_r_"][role="checkbox"][aria-checked="false"][data-state="unchecked"][value="on"]'
+
+     if sb.is_element_visible(checkb):
+            sb.gui_click_element(checkb)
+        else:
+            print("checkbox button is not there!")
 
     # Standard syntax for clicking a button containing specific text in  Mode
-    sb.click('div[data-testid="signup-signup-button-div"] button:contains("Sign up")')
+    sb.gui_click_element('div[data-testid="signup-signup-button-div"] button:contains("Sign up")')
 
     sb.sleep(0.2)
 
@@ -76,7 +88,7 @@ try:
 
     sb.sleep(3)
 
-    sb.click('div[class="checkbox-hitarea overlay -inset-1.5"]')
+    sb.gui_click_element('div[class="checkbox-hitarea overlay -inset-1.5"]')
 
     sb.click('button:contains("Next")')
 
