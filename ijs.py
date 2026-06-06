@@ -38,6 +38,19 @@ try:
     sb.press_keys('input[name="email"]', f"ytprojectelevenlabsacckbkb{9990+w}@catchmail.io", 20)  # human-speed
     sb.press_keys('input[name="password"]', "Prince!4438#")
 
+    sb.sleep(1)
+
+    sb.save_screenshot("newmethod2.png", "screenshots")
+
+    checkb = 'button[data-agent-id*="checkbox-_r_"][role="checkbox"][aria-checked="false"][data-state="unchecked"][value="on"]'
+
+    if sb.is_element_visible(checkb):
+        sb.gui_click_element(checkb)
+    else:
+        print("checkbox button is not there!")
+
+    sb.sleep(0.4)
+
     # Standard syntax for clicking a button containing specific text in  Mode
     sb.click('div[data-testid="signup-signup-button-div"] button:contains("Sign up")')
 
