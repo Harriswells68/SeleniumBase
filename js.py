@@ -27,102 +27,114 @@ def generate_vlink(c):
     
     raise Exception("ERRROR")
 
-url = "https://elevenlabs.io/app/sign-up"
-
-w=random.randint(9999, 12000)
-
-print(w)
-
 sb = sb_cdp.Chrome(
-    url,
+    "https://headless-detector.vercel.app/",
     test=True,
     guest_mode=True
 )
 
-try:
-    sb.sleep(4)
+sb.sleep(4)
 
-    sb.press_keys('input[name="email"]', f"ytprojectelevenlabsacckbkb{9990+w}@catchmail.io")  # human-speed
-    sb.press_keys('input[name="password"]', "Prince!4438#")
+sb.sb.save_as_pdf("example_page.png", folder="screenshots") 
 
-    # Standard syntax for clicking a button containing specific text in  Mode
-    sb.gui_click_element('div[data-testid="signup-signup-button-div"] button:contains("Sign up")')
+sb.save_screenshot("after sign up.png", "screenshots")
 
-    sb.sleep(0.2)
+# url = "https://elevenlabs.io/app/sign-up"
 
-    sb.solve_captcha()
+# w=random.randint(9999, 12000)
 
-    sb.sleep(2)
+# print(w)
 
-    sb.save_screenshot("after sign up.png", "screenshots")
+# sb = sb_cdp.Chrome(
+#     url,
+#     test=True,
+#     guest_mode=True
+# )
 
-    sb.sleep(4)
+# try:
+#     sb.sleep(4)
 
-    sb.save_screenshot("after sign up after 2.png", "screenshots")
+#     sb.press_keys('input[name="email"]', f"ytprojectelevenlabsacckbkb{9990+w}@catchmail.io")  # human-speed
+#     sb.press_keys('input[name="password"]', "Prince!4438#")
 
-    link=generate_vlink(9990+w)
+#     # Standard syntax for clicking a button containing specific text in  Mode
+#     sb.gui_click_element('div[data-testid="signup-signup-button-div"] button:contains("Sign up")')
 
-    sb.open(link)
+#     sb.sleep(0.2)
 
-    sb.sleep(5)
+#     sb.solve_captcha()
 
-    sb.click('button:contains("Continue")')
+#     sb.sleep(2)
 
-    sb.sleep(1)
+#     sb.save_screenshot("after sign up.png", "screenshots")
 
-    sb.press_keys('input[name="password"]', "Prince!4438#")
+#     sb.sleep(4)
 
-    sb.save_screenshot("before sign in.png", "screenshots")
+#     sb.save_screenshot("after sign up after 2.png", "screenshots")
 
-    sb.sleep(1)
+#     link=generate_vlink(9990+w)
 
-    # Standard syntax for clicking a button containing specific text in  Mode
-    sb.gui_click_element('#sign-in-form > div.relative.flex.items-center.justify-between.w-full.h-fit.mt-4 > div.relative.w-full > button:contains("Sign in")')
+#     sb.open(link)
 
-    sb.sleep(2)
+#     sb.sleep(5)
 
-    sb.save_screenshot("after login.png", "screenshots")
+#     sb.click('button:contains("Continue")')
 
-    sb.click('button:contains("Continue")', 20)
+#     sb.sleep(1)
 
-    sb.sleep(3)
+#     sb.press_keys('input[name="password"]', "Prince!4438#")
 
-    sb.gui_click_element('div[class="checkbox-hitarea overlay -inset-1.5"]')
+#     sb.save_screenshot("before sign in.png", "screenshots")
 
-    sb.click('button:contains("Next")')
+#     sb.sleep(1)
 
-    sb.sleep(2)
+#     # Standard syntax for clicking a button containing specific text in  Mode
+#     sb.gui_click_element('#sign-in-form > div.relative.flex.items-center.justify-between.w-full.h-fit.mt-4 > div.relative.w-full > button:contains("Sign in")')
 
-    sb.click('button:contains("Personal use")')
+#     sb.sleep(2)
 
-    sb.sleep(2)
+#     sb.save_screenshot("after login.png", "screenshots")
 
-    sb.click('button:contains("Text to speech")')
+#     sb.click('button:contains("Continue")', 20)
 
-    sb.sleep(1)
+#     sb.sleep(3)
 
-    sb.click('button:contains("Continue")')
+#     sb.gui_click_element('div[class="checkbox-hitarea overlay -inset-1.5"]')
 
-    sb.sleep(1)
+#     sb.click('button:contains("Next")')
 
-    sb.click('button:contains("Skip")')
+#     sb.sleep(2)
 
-    sb.sleep(3)
+#     sb.click('button:contains("Personal use")')
 
-    sb.open("https://elevenlabs.io/app/developers/api-keys")
+#     sb.sleep(2)
 
-    sb.sleep(2)
+#     sb.click('button:contains("Text to speech")')
 
-    sb.click('button:contains("Create Key")', 20)
+#     sb.sleep(1)
 
-    sb.click('button[id*="restrict-key-toggle-_r_"]')
-    sb.sleep(0.4)
+#     sb.click('button:contains("Continue")')
 
-    sb.click('[class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 border-t border-border p-4 -m-6 mt-0 gap-2"] button:nth-of-type(2)')
+#     sb.sleep(1)
 
-    element = sb.find_element('input[data-agent-id*="input-_r_"][readonly=""][type="text"]')
-    attribute_value = element.get_attribute('value')
-    print(f"value attribute: {attribute_value}")
-finally:
-    sb.driver.stop()
+#     sb.click('button:contains("Skip")')
+
+#     sb.sleep(3)
+
+#     sb.open("https://elevenlabs.io/app/developers/api-keys")
+
+#     sb.sleep(2)
+
+#     sb.click('button:contains("Create Key")', 20)
+
+#     sb.click('button[id*="restrict-key-toggle-_r_"]')
+#     sb.sleep(0.4)
+
+#     sb.click('[class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 border-t border-border p-4 -m-6 mt-0 gap-2"] button:nth-of-type(2)')
+
+#     element = sb.find_element('input[data-agent-id*="input-_r_"][readonly=""][type="text"]')
+#     attribute_value = element.get_attribute('value')
+#     print(f"value attribute: {attribute_value}")
+# finally:
+#     sb.driver.stop()
 
