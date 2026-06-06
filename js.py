@@ -27,114 +27,111 @@ def generate_vlink(c):
     
     raise Exception("ERRROR")
 
+url = "https://elevenlabs.io/app/sign-up"
+
+w=random.randint(9999, 12000)
+
+print(w)
+
 sb = sb_cdp.Chrome(
-    "https://pixelscan.net/bot-check",
+    url,
     test=True,
     guest_mode=True
 )
 
-sb.sleep(4)
+try:
+    sb.sleep(4)
 
-sb.save_as_pdf("exaple_page.pdf", folder="screenshots") 
+    sb.click('input[name="email"]')
+    sb.gui_press_keys(f"ytprojectelevenlabsacckbkb{9990+w}@catchmail.io")
 
-sb.save_screenshot("after sign up.png", "screenshots")
+    sb.click('input[name="password"]')
+    sb.gui_press_keys(f"Prince!4438#")
 
-# url = "https://elevenlabs.io/app/sign-up"
+    sb.save_screenshot("newmethod.png", "screenshots")
 
-# w=random.randint(9999, 12000)
+    # sb.press_keys('input[name="email"]', f"ytprojectelevenlabsacckbkb{9990+w}@catchmail.io")  # human-speed
+    # sb.press_keys('input[name="password"]', "Prince!4438#")
 
-# print(w)
+    # Standard syntax for clicking a button containing specific text in  Mode
+    sb.gui_click_element('div[data-testid="signup-signup-button-div"] button:contains("Sign up")')
 
-# sb = sb_cdp.Chrome(
-#     url,
-#     test=True,
-#     guest_mode=True
-# )
+    sb.sleep(0.2)
 
-# try:
-#     sb.sleep(4)
+    sb.solve_captcha()
 
-#     sb.press_keys('input[name="email"]', f"ytprojectelevenlabsacckbkb{9990+w}@catchmail.io")  # human-speed
-#     sb.press_keys('input[name="password"]', "Prince!4438#")
+    sb.sleep(2)
 
-#     # Standard syntax for clicking a button containing specific text in  Mode
-#     sb.gui_click_element('div[data-testid="signup-signup-button-div"] button:contains("Sign up")')
+    sb.save_screenshot("after sign up.png", "screenshots")
 
-#     sb.sleep(0.2)
+    sb.sleep(4)
 
-#     sb.solve_captcha()
+    sb.save_screenshot("after sign up after 2.png", "screenshots")
 
-#     sb.sleep(2)
+    link=generate_vlink(9990+w)
 
-#     sb.save_screenshot("after sign up.png", "screenshots")
+    sb.open(link)
 
-#     sb.sleep(4)
+    sb.sleep(5)
 
-#     sb.save_screenshot("after sign up after 2.png", "screenshots")
+    sb.click('button:contains("Continue")')
 
-#     link=generate_vlink(9990+w)
+    sb.sleep(1)
 
-#     sb.open(link)
+    sb.press_keys('input[name="password"]', "Prince!4438#")
 
-#     sb.sleep(5)
+    sb.save_screenshot("before sign in.png", "screenshots")
 
-#     sb.click('button:contains("Continue")')
+    sb.sleep(1)
 
-#     sb.sleep(1)
+    # Standard syntax for clicking a button containing specific text in  Mode
+    sb.gui_click_element('#sign-in-form > div.relative.flex.items-center.justify-between.w-full.h-fit.mt-4 > div.relative.w-full > button:contains("Sign in")')
 
-#     sb.press_keys('input[name="password"]', "Prince!4438#")
+    sb.sleep(2)
 
-#     sb.save_screenshot("before sign in.png", "screenshots")
+    sb.save_screenshot("after login.png", "screenshots")
 
-#     sb.sleep(1)
+    sb.click('button:contains("Continue")', 20)
 
-#     # Standard syntax for clicking a button containing specific text in  Mode
-#     sb.gui_click_element('#sign-in-form > div.relative.flex.items-center.justify-between.w-full.h-fit.mt-4 > div.relative.w-full > button:contains("Sign in")')
+    sb.sleep(3)
 
-#     sb.sleep(2)
+    sb.gui_click_element('div[class="checkbox-hitarea overlay -inset-1.5"]')
 
-#     sb.save_screenshot("after login.png", "screenshots")
+    sb.click('button:contains("Next")')
 
-#     sb.click('button:contains("Continue")', 20)
+    sb.sleep(2)
 
-#     sb.sleep(3)
+    sb.click('button:contains("Personal use")')
 
-#     sb.gui_click_element('div[class="checkbox-hitarea overlay -inset-1.5"]')
+    sb.sleep(2)
 
-#     sb.click('button:contains("Next")')
+    sb.click('button:contains("Text to speech")')
 
-#     sb.sleep(2)
+    sb.sleep(1)
 
-#     sb.click('button:contains("Personal use")')
+    sb.click('button:contains("Continue")')
 
-#     sb.sleep(2)
+    sb.sleep(1)
 
-#     sb.click('button:contains("Text to speech")')
+    sb.click('button:contains("Skip")')
 
-#     sb.sleep(1)
+    sb.sleep(3)
 
-#     sb.click('button:contains("Continue")')
+    sb.open("https://elevenlabs.io/app/developers/api-keys")
 
-#     sb.sleep(1)
+    sb.sleep(2)
 
-#     sb.click('button:contains("Skip")')
+    sb.click('button:contains("Create Key")', 20)
 
-#     sb.sleep(3)
+    sb.click('button[id*="restrict-key-toggle-_r_"]')
+    sb.sleep(0.4)
 
-#     sb.open("https://elevenlabs.io/app/developers/api-keys")
+    sb.click('[class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 border-t border-border p-4 -m-6 mt-0 gap-2"] button:nth-of-type(2)')
 
-#     sb.sleep(2)
+    element = sb.find_element('input[data-agent-id*="input-_r_"][readonly=""][type="text"]')
+    attribute_value = element.get_attribute('value')
+    print(f"value attribute: {attribute_value}")
 
-#     sb.click('button:contains("Create Key")', 20)
-
-#     sb.click('button[id*="restrict-key-toggle-_r_"]')
-#     sb.sleep(0.4)
-
-#     sb.click('[class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 border-t border-border p-4 -m-6 mt-0 gap-2"] button:nth-of-type(2)')
-
-#     element = sb.find_element('input[data-agent-id*="input-_r_"][readonly=""][type="text"]')
-#     attribute_value = element.get_attribute('value')
-#     print(f"value attribute: {attribute_value}")
-# finally:
-#     sb.driver.stop()
+finally:
+    sb.driver.stop()
 
