@@ -33,11 +33,9 @@ w=random.randint(9999, 12000)
 
 print(w)
 
-try:
-    sb = sb_cdp.Chrome(url,
-    headed=True, 
-    chromium_arg="--no-sandbox")
+sb = sb_cdp.Chrome(url)
 
+try:
     sb.sleep(4)
 
     sb.press_keys('input[name="email"]', f"ytprojectelevenlabsacckbkb{9990+w}@catchmail.io")  # human-speed
