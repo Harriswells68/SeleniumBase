@@ -38,9 +38,7 @@ try:
     headed=True, 
     chromium_arg="--no-sandbox")
 
-    sb.sleep(4)
-
-    ask=input("assk")
+    sb.sleep(4000)
 
     
 finally:
