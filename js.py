@@ -35,7 +35,7 @@ sb = sb_cdp.Chrome(
 
 sb.sleep(4)
 
-sb.sb.save_as_pdf("example_page.png", folder="screenshots") 
+sb.save_as_pdf("example_page.png", folder="screenshots") 
 
 sb.save_screenshot("after sign up.png", "screenshots")
 
