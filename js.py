@@ -58,6 +58,10 @@ try:
 
     sb.save_screenshot("after sign up.png", "screenshots")
 
+    sb.sleep(4)
+
+    sb.save_screenshot("after sign up after 2.png", "screenshots")
+
     link=generate_vlink(9990+w)
 
     sb.open(link)
