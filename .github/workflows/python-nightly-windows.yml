@@ -1,5 +1,9 @@
 name: Nightly Tests (Windows)
 
+
+permissions:
+  contents: write
+
 on:
   workflow_dispatch:
 
@@ -53,3 +57,11 @@ jobs:
     - name: Verify seleniumbase install from PyPI
       run: |
         pip install seleniumbase -U --no-deps --force-reinstall --no-cache-dir
+    - name: Commit screenshots to repo
+      if: always()
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add screenshots/
+        git diff --staged --quiet || git commit -m "Screenshots - $(date +'%Y-%m-%d %H:%M:%S')"
+        git push
