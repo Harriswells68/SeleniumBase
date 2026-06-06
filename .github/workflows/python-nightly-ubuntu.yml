@@ -46,7 +46,7 @@ jobs:
         nosetests nothing2.py
     - name: Run raw
       run: |
-        pytest examples/cdp_mode/raw_gas_records.py --rs --browser=chrome --headless -v -s 
+        python examples/cdp_mode/raw_gas_records.py --rs --browser=chrome --headless -v -s run
     - name: Verify seleniumbase install from PyPI
       run: |
         pip install seleniumbase -U --no-deps --force-reinstall --no-cache-dir
