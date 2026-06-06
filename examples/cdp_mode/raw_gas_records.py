@@ -42,7 +42,7 @@ with SB(uc=True, test=True) as sb:
     # Standard syntax for clicking a button containing specific text in  Mode
     sb.click('div[data-testid="signup-signup-button-div"] button:contains("Sign up")')
 
-    sb.sleep(0.2)
+    sb.sleep(1)
 
     sb.solve_captcha()
 
