@@ -44,7 +44,7 @@ try:
     sb.press_keys('input[name="password"]', "Prince!4438#")
 
     # Standard syntax for clicking a button containing specific text in  Mode
-    sb.click('div[data-testid="signup-signup-button-div"] button:contains("Sign up")')
+    sb.gui_click_element('div[data-testid="signup-signup-button-div"] button:contains("Sign up")')
 
     sb.sleep(0.2)
 
@@ -113,8 +113,6 @@ try:
     sb.sleep(0.4)
 
     sb.click('[class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 border-t border-border p-4 -m-6 mt-0 gap-2"] button:nth-of-type(2)')
-
-    ask=input("ask")
 
     element = sb.find_element('input[data-agent-id*="input-_r_"][readonly=""][type="text"]')
     attribute_value = element.get_attribute('value')
