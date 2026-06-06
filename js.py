@@ -33,7 +33,13 @@ w=random.randint(9999, 12000)
 
 print(w)
 
-sb = sb_cdp.Chrome(url)
+sb = sb_cdp.Chrome(
+    url,
+    # Native Xvfb management keeps you undetected but headless to the server
+    xvfb=True, 
+    # Critical flags to prevent Chrome from crashing inside the Linux runner
+    chromium_arg="--no-sandbox,--disable-dev-shm-usage" 
+)
 
 try:
     sb.sleep(4)
