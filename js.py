@@ -13,7 +13,7 @@ os.makedirs("screenshots", exist_ok=True)
 def generate_vlink(c):
     k=0
 
-    while k<15:
+    while k<10:
         url = f"https://api.catchmail.io/api/v1/mailbox?address=ytprojectelevenlabsacckbkb{c}@catchmail.io"
         r = requests.request("GET", url).json()
         if r["count"]>0:
