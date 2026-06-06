@@ -45,10 +45,10 @@ try:
 
     checkb = 'button[data-agent-id*="checkbox-_r_"][role="checkbox"][aria-checked="false"][data-state="unchecked"][value="on"]'
 
-     if sb.is_element_visible(checkb):
-            sb.gui_click_element(checkb)
-        else:
-            print("checkbox button is not there!")
+    if sb.is_element_visible(checkb):
+        sb.gui_click_element(checkb)
+    else:
+        print("checkbox button is not there!")
 
     # Standard syntax for clicking a button containing specific text in  Mode
     sb.gui_click_element('div[data-testid="signup-signup-button-div"] button:contains("Sign up")')
