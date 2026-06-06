@@ -89,7 +89,9 @@ try:
 
     sb.sleep(3)
 
-    sb.click('div[class="checkbox-hitarea overlay -inset-1.5"]')
+    sb.click('button[data-agent-id*="checkbox-_r_"][role="checkbox"][aria-checked="false"][data-state="unchecked"]')
+
+    #sb.click('div[class="checkbox-hitarea overlay -inset-1.5"]')
 
     sb.click('button:contains("Next")')
 
