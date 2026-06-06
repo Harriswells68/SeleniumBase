@@ -123,7 +123,10 @@ try:
 
     element = sb.find_element('input[data-agent-id*="input-_r_"][readonly=""][type="text"]')
     attribute_value = element.get_attribute('value')
-    print(f"value attribute: {attribute_value}")
+    filepath = "output.txt"
+    
+    with open(filepath, "a") as f:
+        f.write(f"{attribute_value}\n")
 finally:
     sb.driver.stop()
 
