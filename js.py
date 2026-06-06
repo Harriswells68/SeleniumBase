@@ -29,7 +29,7 @@ w=random.randint(9999, 12000)
 
 print(w)
 
-sb = sb_cdp.Chrome(url, test=True, guest_mode=True)
+sb = sb_cdp.Chrome(url, test=True, incognito=True)
 
 try:
 
@@ -43,6 +43,8 @@ try:
     # 3. Now send the hardware keystrokes
     sb.gui_press_keys(f"ytprojectelevenlabsacckbkb{9990+w}@catchmail.io")
 
+    sb.sleep(1)
+
     # 1. Use a GUI click so the hardware mouse physically moves and clicks the element
     sb.gui_click_element('input[name="password"]')
     
@@ -53,8 +55,11 @@ try:
     sb.gui_press_keys(f"Prince!4438#")
 
     sb.save_screenshot("newmethod.png", "screenshots")
+    sb.sleep(0.5)
 
     sb.gui_press_keys("PAGE_DOWN")
+
+    sb.sleep(1)
 
     sb.save_screenshot("newmethod2.png", "screenshots")
 
@@ -65,10 +70,12 @@ try:
     else:
         print("checkbox button is not there!")
 
+    sb.sleep(0.4)
+
     # Standard syntax for clicking a button containing specific text in  Mode
     sb.gui_click_element('div[data-testid="signup-signup-button-div"] button:contains("Sign up")')
 
-    sb.sleep(0.2)
+    sb.sleep(0.293)
 
     sb.solve_captcha()
 
