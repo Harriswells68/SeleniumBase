@@ -28,14 +28,14 @@ def generate_vlink(c):
     raise Exception("ERRROR")
 
 sb = sb_cdp.Chrome(
-    "https://headless-detector.vercel.app/",
+    "https://scrapfly.io/web-scraping-tools/automation-detector",
     test=True,
     guest_mode=True
 )
 
 sb.sleep(4)
 
-sb.save_as_pdf("example_page.png", folder="screenshots") 
+sb.save_as_pdf("exaple_page.pdf", folder="screenshots") 
 
 sb.save_screenshot("after sign up.png", "screenshots")
 
