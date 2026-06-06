@@ -28,7 +28,7 @@ def generate_vlink(c):
     raise Exception("ERRROR")
 
 sb = sb_cdp.Chrome(
-    "https://scrapfly.io/web-scraping-tools/automation-detector",
+    "https://pixelscan.net/bot-check",
     test=True,
     guest_mode=True
 )
