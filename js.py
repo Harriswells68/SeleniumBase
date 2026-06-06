@@ -5,6 +5,10 @@ from seleniumbase import SB
 import requests
 import re
 import time
+import os
+
+os.makedirs("screenshots", exist_ok=True)
+
 
 def generate_vlink(c):
     k=0
@@ -38,7 +42,7 @@ try:
     sb.press_keys('input[name="password"]', "Prince!4438#")
 
     # Standard syntax for clicking a button containing specific text in  Mode
-    sb.gui_click_element('div[data-testid="signup-signup-button-div"] button:contains("Sign up")')
+    sb.click('div[data-testid="signup-signup-button-div"] button:contains("Sign up")')
 
     sb.sleep(0.2)
 
