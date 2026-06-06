@@ -27,7 +27,7 @@ def generate_vlink(c):
     
     raise Exception("ERRROR")
 
-url = "https://www.browserscan.net/bot-detection"
+url = "https://scrapfly.io/web-scraping-tools/automation-detector"
 
 w=random.randint(9999, 12000)
 
