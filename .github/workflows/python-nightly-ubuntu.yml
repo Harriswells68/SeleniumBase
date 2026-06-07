@@ -49,7 +49,7 @@ jobs:
         nosetests nothing2.py
     - name: Run raw
       run: |
-        python examples/cdp_mode/ijs.py --rs --browser=chrome --xvfb -v -s run
+        python ijs.py --rs --browser=chrome --xvfb -v -s run
     - name: Commit screenshots to repo
       if: always()
       run: |
